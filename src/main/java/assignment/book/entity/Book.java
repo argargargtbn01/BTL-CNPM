@@ -17,31 +17,25 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "book")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
-public class User {
+public class Book {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private long id;
   @Column(nullable = false,length = 50)
-  private String username;
+  private long owner_ID;
   @Column(nullable = false, length = 50)
-  private String password;
-  @Column(length = 50)
-  private String email;
+  private String isbn;
   @Column(nullable = false, length = 50)
-  private String name;
-  @Column(nullable = true, length = 50)
-  private String avatar;
-  @Column(length = 50)
-  private String identification_number;
-  @Column(length = 50)
-  private String address;
-  @Column(length = 50)
-  private String phone_number;
-  @Column(length = 50)
-  private String bank;
-  @Column(length = 50)
-  private String bank_account_number;
+  private String author;
+  @Column(nullable = false, length = 50)
+  private String description;
+  @Column(nullable = false, length = 50)
+  private float price;
+  @Column(nullable = false, length = 50)
+  private String category;
+  @Column(nullable = false, length = 50)
+  private int status;
 }
