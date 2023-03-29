@@ -22,13 +22,13 @@ public class User {
     @Column(nullable = false,length = 50)
     private String username;
     @Column(nullable = false,length = 50)
-    private String password;
+    private String encoded_password;
     @Column(length = 50)
     private String email;
     @Column(length = 50)
     private String name;
-    @Column(length = 50)
-    private String avatar;
+    @Column(columnDefinition = "BLOB")
+    private byte[] avatar;
     @Column(length = 50)
     private String identification_number;
     @Column(length = 200)
