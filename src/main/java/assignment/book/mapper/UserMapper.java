@@ -11,10 +11,15 @@ public class UserMapper {
     public UserResponseDto toUserResponseDto (User user){
         UserResponseDto userResponseDto = new UserResponseDto();
         userResponseDto.setId(user.getId());
-        userResponseDto.setName(user.getName());
+        userResponseDto.setUsername(user.getUsername());
         userResponseDto.setEmail(user.getEmail());
-        userResponseDto.setPhone(user.getPhone());
+        userResponseDto.setName(user.getName());
         userResponseDto.setAvatar(user.getAvatar());
+        userResponseDto.setIdentification_number(user.getIdentification_number());
+        userResponseDto.setAddress(user.getAddress());
+        userResponseDto.setPhone_number(user.getPhone_number());
+        userResponseDto.setBank(user.getBank());
+        userResponseDto.setBank_account_number(user.getBank_account_number());
         return userResponseDto;
     }
 
