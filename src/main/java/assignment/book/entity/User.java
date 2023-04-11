@@ -21,13 +21,13 @@ public class User {
     private Long id;
     @Column(nullable = false,length = 50)
     private String username;
-    @Column(nullable = false,length = 50)
-    private String password;
+    @Column(nullable = false,length = 500)
+    private String encoded_password;
     @Column(length = 50)
     private String email;
     @Column(length = 50)
     private String name;
-    @Column(length = 50)
+    @Column(length = 200)
     private String avatar;
     @Column(length = 50)
     private String identification_number;
