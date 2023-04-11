@@ -15,7 +15,7 @@ public class UserResponseDto {
     private String username;
     private String email;
     private String name;
-    private byte[] avatar;
+    private String avatar;
     private String identification_number;
     private String address;
     private String phone_number;

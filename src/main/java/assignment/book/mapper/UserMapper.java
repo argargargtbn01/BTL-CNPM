@@ -32,14 +32,11 @@ public class UserMapper {
         user.setEncoded_password(encodedPassword);
         user.setEmail(userRequestDto.getEmail());
         user.setName(userRequestDto.getName());
-        user.setAvatar(userRequestDto.getAvatar());
         user.setIdentification_number(userRequestDto.getIdentification_number());
         user.setAddress(userRequestDto.getAddress());
         user.setPhone_number(userRequestDto.getPhone_number());
         user.setBank(userRequestDto.getBank());
         user.setBank_account_number(userRequestDto.getBank_account_number());
-
-
         return user;
     }
 }
