@@ -22,7 +22,9 @@ import java.util.Collections;
 public class UploadFileService {
     public String uploadFile(MultipartFile file)  {
         try {
-        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:/Users/p/Downloads/credentials.json"))
+//            GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:/Users/p/Downloads/credentials.json"))
+//                    .createScoped(Arrays.asList(DriveScopes.DRIVE_FILE));
+        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:/Users/ADMIN/Downloads/credentials.json"))
                 .createScoped(Arrays.asList(DriveScopes.DRIVE_FILE));
         HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(
                 credentials);

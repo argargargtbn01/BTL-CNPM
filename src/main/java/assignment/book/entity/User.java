@@ -27,8 +27,6 @@ public class User {
     private String email;
     @Column(length = 50)
     private String name;
-    @Column(length = 200)
-    private String avatar;
     @Column(length = 50)
     private String identification_number;
     @Column(length = 200)

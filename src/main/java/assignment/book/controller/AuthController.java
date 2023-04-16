@@ -17,9 +17,9 @@ import java.util.Optional;
 public class AuthController {
     @Autowired
     private AuthService authService;
-    @PostMapping(value = "/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE )
-    public ResponseEntity<?> signup(@RequestParam("file") MultipartFile file, @ModelAttribute UserRequestDto userRequestDto){
-        authService.signup(userRequestDto,file);
+    @PostMapping(value = "/signup")
+    public ResponseEntity<?> signup(@ModelAttribute UserRequestDto userRequestDto){
+        authService.signup(userRequestDto);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

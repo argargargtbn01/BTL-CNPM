@@ -18,7 +18,6 @@ public class UserRequestDto {
     private String password;
     private String email;
     private String name;
-    private MultipartFile avatar;
     private String identification_number;
     private String address;
     private String phone_number;

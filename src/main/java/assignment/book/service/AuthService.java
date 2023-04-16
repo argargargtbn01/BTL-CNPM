@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Service
 public interface AuthService {
-    void signup (UserRequestDto userRequestDto, MultipartFile file);
+    void signup (UserRequestDto userRequestDto);
 
     Optional<UserResponseDto> login(String username, String password);
 

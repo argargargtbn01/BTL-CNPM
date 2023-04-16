@@ -26,10 +26,8 @@ public class AuthServiceImpl implements AuthService {
     private final UserMapper userMapper;
 
     @Override
-    public void signup(UserRequestDto userRequestDto, MultipartFile file) {
+    public void signup(UserRequestDto userRequestDto) {
         User user = userMapper.toUser(userRequestDto);
-        String avatar = uploadFileService.uploadFile(file);
-        user.setAvatar(avatar);
         userRepository.save(user);
     }
 

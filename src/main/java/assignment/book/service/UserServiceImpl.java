@@ -30,6 +30,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDto updateUser(Long id, UserRequestDto userRequestDto) {
-        return null;
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setUsername(userRequestDto.getUsername());
+            user.setEmail(userRequestDto.getEmail());
+            user.setName(userRequestDto.getName());
+            user.setIdentification_number(userRequestDto.getIdentification_number());
+            user.setAddress(userRequestDto.getAddress());
+            user.setPhone_number(userRequestDto.getPhone_number());
+            user.setBank(userRequestDto.getBank());
+            user.setBank_account_number(userRequestDto.getBank_account_number());
+            userRepository.save(user);
+            UserResponseDto userResponseDto = userMapper.toUserResponseDto(user);
+            return userResponseDto;
+        }
+        throw new NotFoundException("User with id = " + id + " not found");
     }
 }
