@@ -13,29 +13,26 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "book")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class User {
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false,length = 50)
-    private String username;
-    @Column(nullable = false,length = 500)
-    private String encoded_password;
+    @Column(length = 20)
+    private Long owner_id;
     @Column(length = 50)
-    private String email;
-    @Column(length = 50)
-    private String name;
-    @Column(length = 50)
-    private String identification_number;
+    private String ISBN;
     @Column(length = 200)
-    private String address;
-    @Column(length = 20)
-    private String phone_number;
+    private String image_Link;
     @Column(length = 50)
-    private String bank;
+    private String author;
+    @Column(length = 200)
+    private String description;
     @Column(length = 20)
-    private String bank_account_number;
-
+    private String price;
+    @Column(length = 20)
+    private String category;
+    @Column(length = 10)
+    private int status; // 0 : available , 1 : sold
 }

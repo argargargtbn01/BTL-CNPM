@@ -1,14 +1,31 @@
 package assignment.book.controller;
 
+import assignment.book.dto.request.UserRequestDto;
+import assignment.book.dto.response.UserResponseDto;
+import assignment.book.service.AuthService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-    public ResponseEntity<?> login(){
+    @Autowired
+    private AuthService authService;
+    @PostMapping(value = "/signup")
+    public ResponseEntity<?> signup(@ModelAttribute UserRequestDto userRequestDto){
+        authService.signup(userRequestDto);
         return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestParam String username,@RequestParam String password){
+        Optional<UserResponseDto> userResponseDto = authService.login(username, password);
+        return ResponseEntity.status(HttpStatus.OK).body(userResponseDto);
     }
 }
