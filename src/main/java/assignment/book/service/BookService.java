@@ -1,5 +1,6 @@
 package assignment.book.service;
 
+import assignment.book.dto.response.BookResponseDto;
 import assignment.book.entity.Book;
 import org.springframework.stereotype.Service;
 
@@ -8,5 +9,5 @@ import java.util.Optional;
 
 @Service
 public interface BookService {
-    List<Book> getAllBook ();
+    List<BookResponseDto> getAllBook ();
 }

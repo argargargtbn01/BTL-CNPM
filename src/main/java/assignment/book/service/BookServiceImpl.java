@@ -1,5 +1,6 @@
 package assignment.book.service;
 
+import assignment.book.dto.response.BookResponseDto;
 import assignment.book.entity.Book;
 import assignment.book.mapper.BookMapper;
 import assignment.book.repository.BookRepository;
@@ -16,8 +17,13 @@ public class BookServiceImpl implements BookService{
 
     private final BookMapper bookMapper;
     @Override
-    public List<Book> getAllBook() {
-        List<Book> books = new ArrayList<>();
-        return null;
+    public List<BookResponseDto> getAllBook() {
+        List<Book> books = bookRepository.findAll();
+        List<BookResponseDto> bookResponseDtos = new ArrayList<>();
+        for (Book book: books){
+            BookResponseDto bookResponseDto = bookMapper.toBookResponseDto(book);
+            bookResponseDtos.add(bookResponseDto);
+        }
+        return bookResponseDtos;
     }
 }
