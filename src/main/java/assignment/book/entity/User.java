@@ -19,23 +19,23 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false,length = 50)
+    @Column(nullable = false,length = 500)
     private String username;
     @Column(nullable = false,length = 500)
     private String encoded_password;
-    @Column(length = 50)
+    @Column(length = 200)
     private String email;
-    @Column(length = 50)
+    @Column(length = 200)
     private String name;
-    @Column(length = 50)
+    @Column(length = 200)
     private String identification_number;
     @Column(length = 200)
     private String address;
     @Column(length = 20)
     private String phone_number;
-    @Column(length = 50)
+    @Column(length = 200)
     private String bank;
-    @Column(length = 20)
+    @Column(length = 200)
     private String bank_account_number;
 
 }

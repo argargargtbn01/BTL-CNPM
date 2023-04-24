@@ -25,11 +25,10 @@ public class BookMapper {
         Book book = new Book();
         book.setOwner_id(bookRequestDto.getOwner_id());
         book.setISBN(bookRequestDto.getISBN());
-        book.setImage_Link(bookRequestDto.getImage_Link());
         book.setAuthor(bookRequestDto.getAuthor());
         book.setDescription(bookRequestDto.getDescription());
         book.setPrice(bookRequestDto.getPrice());
-        book.setCategory(book.getCategory());
+        book.setCategory(bookRequestDto.getCategory());
         book.setStatus(0);
         return book;
     }

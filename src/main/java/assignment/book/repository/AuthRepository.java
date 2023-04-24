@@ -13,4 +13,5 @@ public interface AuthRepository extends JpaRepository<User,Long> {
     @Query("SELECT u FROM User u WHERE u.username = :username")
     Optional<User> findByUsername(String username);
 
+
 }

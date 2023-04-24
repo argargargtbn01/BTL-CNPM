@@ -17,7 +17,6 @@ import javax.persistence.Id;
 public class BookRequestDto {
     private Long owner_id;
     private String ISBN;
-    private String image_Link;
     private String author;
     private String description;
     private String price;
