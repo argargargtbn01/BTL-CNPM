@@ -53,4 +53,15 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<?> deleteBook (@PathVariable Long id){
+        bookService.deleteBook(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<?> changeStatusToSold (@PathVariable Long id){
+        bookService.changeStatusToSold(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
 }

@@ -82,4 +82,19 @@ public class BookServiceImpl implements BookService{
         book.setImage_Link(image_Link);
         bookRepository.save(book);
     }
+
+    @Override
+    public void deleteBook(Long id) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        Book book = optionalBook.orElseThrow(() -> new NotFoundException("book with id = " + id +  " not found"));
+        bookRepository.deleteById(id);
+    }
+
+    @Override
+    public void changeStatusToSold(Long id) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        Book book = optionalBook.orElseThrow(() -> new NotFoundException("book with id = " + id +  " not found"));
+        book.setStatus(1);
+        bookRepository.save(book);
+    }
 }

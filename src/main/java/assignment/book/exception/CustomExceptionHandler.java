@@ -13,4 +13,10 @@ public class CustomExceptionHandler {
     public ErrorResponse handlerNotFoundException(NotFoundException ex, WebRequest req){
         return new ErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
     }
+
+    @ExceptionHandler(NameAlreadyExistException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handlerNameAlreadyExistException (NameAlreadyExistException ex , WebRequest req){
+        return new ErrorResponse(HttpStatus.CONFLICT , ex.getMessage());
+    }
 }

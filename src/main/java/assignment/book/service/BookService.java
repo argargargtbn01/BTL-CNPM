@@ -23,5 +23,9 @@ public interface BookService {
 
     void createBook (BookRequestDto bookRequestDto, MultipartFile file);
 
+    void deleteBook (Long id);
+
+    void changeStatusToSold (Long id);
+
 
 }

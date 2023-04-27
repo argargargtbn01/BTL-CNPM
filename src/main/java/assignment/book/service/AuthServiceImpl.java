@@ -3,6 +3,7 @@ package assignment.book.service;
 import assignment.book.dto.request.UserRequestDto;
 import assignment.book.dto.response.UserResponseDto;
 import assignment.book.entity.User;
+import assignment.book.exception.NameAlreadyExistException;
 import assignment.book.exception.NotFoundException;
 import assignment.book.mapper.UserMapper;
 import assignment.book.repository.AuthRepository;
@@ -27,6 +28,12 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void signup(UserRequestDto userRequestDto) {
+        String username = userRequestDto.getUsername();
+        Optional<User> checkUsernameExist = authRepository.findByUsername(username);
+        if (checkUsernameExist.isPresent()) {
+            throw new NameAlreadyExistException("Username already exists");
+        }
+
         User user = userMapper.toUser(userRequestDto);
         userRepository.save(user);
     }
