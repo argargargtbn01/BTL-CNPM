@@ -2,8 +2,7 @@ package assignment.book.controller;
 
 import assignment.book.dto.request.SavedBookRequestDto;
 import assignment.book.entity.Book;
-import assignment.book.entity.SavedBook;
-import assignment.book.service.SavedBookService;
+import assignment.book.service.savedbook.SavedBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

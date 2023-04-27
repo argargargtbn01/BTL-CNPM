@@ -1,12 +1,12 @@
-package assignment.book.service;
+package assignment.book.service.book;
 
 import assignment.book.dto.request.BookRequestDto;
 import assignment.book.dto.response.BookResponseDto;
 import assignment.book.entity.Book;
-import assignment.book.entity.User;
 import assignment.book.exception.NotFoundException;
 import assignment.book.mapper.BookMapper;
 import assignment.book.repository.BookRepository;
+import assignment.book.service.uploadfile.UploadFileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
 
     private final BookMapper bookMapper;

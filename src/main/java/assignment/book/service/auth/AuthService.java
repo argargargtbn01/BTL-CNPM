@@ -1,4 +1,4 @@
-package assignment.book.service;
+package assignment.book.service.auth;
 
 import assignment.book.dto.request.UserRequestDto;
 import assignment.book.dto.response.UserResponseDto;

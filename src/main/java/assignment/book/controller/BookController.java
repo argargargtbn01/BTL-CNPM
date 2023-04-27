@@ -2,7 +2,7 @@ package assignment.book.controller;
 
 import assignment.book.dto.request.BookRequestDto;
 import assignment.book.dto.response.BookResponseDto;
-import assignment.book.service.BookService;
+import assignment.book.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

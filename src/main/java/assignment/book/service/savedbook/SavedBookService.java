@@ -1,4 +1,4 @@
-package assignment.book.service;
+package assignment.book.service.savedbook;
 
 import assignment.book.dto.request.SavedBookRequestDto;
 import assignment.book.entity.Book;

@@ -1,4 +1,4 @@
-package assignment.book.service;
+package assignment.book.service.auth;
 
 import assignment.book.dto.request.UserRequestDto;
 import assignment.book.dto.response.UserResponseDto;
@@ -8,10 +8,10 @@ import assignment.book.exception.NotFoundException;
 import assignment.book.mapper.UserMapper;
 import assignment.book.repository.AuthRepository;
 import assignment.book.repository.UserRepository;
+import assignment.book.service.uploadfile.UploadFileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
 
@@ -33,7 +33,6 @@ public class AuthServiceImpl implements AuthService {
         if (checkUsernameExist.isPresent()) {
             throw new NameAlreadyExistException("Username already exists");
         }
-
         User user = userMapper.toUser(userRequestDto);
         userRepository.save(user);
     }

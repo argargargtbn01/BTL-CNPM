@@ -1,4 +1,4 @@
-package assignment.book.service;
+package assignment.book.service.savedbook;
 
 import assignment.book.dto.request.SavedBookRequestDto;
 import assignment.book.entity.Book;
@@ -8,6 +8,7 @@ import assignment.book.exception.NotFoundException;
 import assignment.book.repository.BookRepository;
 import assignment.book.repository.SavedBookRepository;
 import assignment.book.repository.UserRepository;
+import assignment.book.service.savedbook.SavedBookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SavedBookServiceImpl implements SavedBookService{
+public class SavedBookServiceImpl implements SavedBookService {
     private final SavedBookRepository savedBookRepository;
     private final BookRepository bookRepository;
     private final UserRepository userRepository;

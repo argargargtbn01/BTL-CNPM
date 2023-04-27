@@ -1,4 +1,4 @@
-package assignment.book.service;
+package assignment.book.service.user;
 
 import assignment.book.dto.request.UserRequestDto;
 import assignment.book.dto.response.UserResponseDto;
@@ -6,6 +6,8 @@ import assignment.book.entity.User;
 import assignment.book.exception.NotFoundException;
 import assignment.book.mapper.UserMapper;
 import assignment.book.repository.UserRepository;
+import assignment.book.service.uploadfile.UploadFileService;
+import assignment.book.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
