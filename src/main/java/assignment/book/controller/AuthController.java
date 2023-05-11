@@ -26,4 +26,5 @@ public class AuthController {
         Optional<UserResponseDto> userResponseDto = authService.login(username, password);
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDto);
     }
+
 }
