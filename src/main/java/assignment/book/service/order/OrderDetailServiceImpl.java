@@ -3,12 +3,11 @@ package assignment.book.service.order;
 import assignment.book.dto.request.OrderDetailRequestDto;
 import assignment.book.entity.Book;
 import assignment.book.entity.OrderDetail;
-import assignment.book.entity.SavedBook;
 import assignment.book.entity.User;
 import assignment.book.exception.NotFoundException;
 import assignment.book.repository.BookRepository;
 import assignment.book.repository.OrderDetailRepository;
-import assignment.book.repository.UserRepository;
+import assignment.book.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +21,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 
     private final BookRepository bookRepository;
 
-    private final UserRepository userRepository;
+    private final ProfileRepository userRepository;
     @Override
     public OrderDetail getOrder(Long id) {
         Optional<OrderDetail> optionalOrderDetail = orderDetailRepository.findById(id);

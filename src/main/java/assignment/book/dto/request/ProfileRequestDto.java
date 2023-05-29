@@ -1,18 +1,15 @@
-package assignment.book.dto.response;
+package assignment.book.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponseDto {
-    private Long id;
-    private String username;
+public class ProfileRequestDto {
     private String email;
     private String name;
     private String identification_number;

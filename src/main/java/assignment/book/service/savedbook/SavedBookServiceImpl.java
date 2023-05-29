@@ -7,8 +7,7 @@ import assignment.book.entity.User;
 import assignment.book.exception.NotFoundException;
 import assignment.book.repository.BookRepository;
 import assignment.book.repository.SavedBookRepository;
-import assignment.book.repository.UserRepository;
-import assignment.book.service.savedbook.SavedBookService;
+import assignment.book.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,7 @@ import java.util.List;
 public class SavedBookServiceImpl implements SavedBookService {
     private final SavedBookRepository savedBookRepository;
     private final BookRepository bookRepository;
-    private final UserRepository userRepository;
+    private final ProfileRepository userRepository;
 
     @Override
     public List<Book> getSavedBook(Long user_id) {

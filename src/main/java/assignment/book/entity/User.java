@@ -22,20 +22,5 @@ public class User {
     @Column(nullable = false,length = 500)
     private String username;
     @Column(nullable = false,length = 500)
-    private String encoded_password;
-    @Column(length = 200)
-    private String email;
-    @Column(length = 200)
-    private String name;
-    @Column(length = 200)
-    private String identification_number;
-    @Column(length = 200)
-    private String address;
-    @Column(length = 20)
-    private String phone_number;
-    @Column(length = 200)
-    private String bank;
-    @Column(length = 200)
-    private String bank_account_number;
-
+    private String password;
 }

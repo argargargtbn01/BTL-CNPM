@@ -1,27 +1,27 @@
 package assignment.book.controller;
 
-import assignment.book.dto.request.UserRequestDto;
-import assignment.book.dto.response.UserResponseDto;
-import assignment.book.service.user.UserService;
+import assignment.book.dto.request.ProfileRequestDto;
+import assignment.book.dto.response.ProfileResponseDto;
+import assignment.book.service.profile.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/profiles")
+public class ProfileController {
     @Autowired
-    private UserService userService;
+    private ProfileService profileService;
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> getUser(@PathVariable long id){
-        UserResponseDto userResponseDto = userService.getUser(id);
+        ProfileResponseDto userResponseDto = profileService.getProfile(id);
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDto);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable long id, @RequestBody UserRequestDto userRequestDto){
-        UserResponseDto userResponseDto = userService.updateUser(id,userRequestDto);
+    public ResponseEntity<?> updateUser(@PathVariable long id, @RequestBody ProfileRequestDto userRequestDto){
+        ProfileResponseDto userResponseDto = profileService.updateProfile(id,userRequestDto);
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDto);
     }
 }

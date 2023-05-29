@@ -1,26 +1,36 @@
-package assignment.book.dto.request;
+package assignment.book.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRequestDto {
-    private String username;
-    private String password;
+@Table(name = "profile")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Profile {
+    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(length = 200)
     private String email;
+    @Column(length = 200)
     private String name;
+    @Column(length = 200)
     private String identification_number;
+    @Column(length = 200)
     private String address;
+    @Column(length = 20)
     private String phone_number;
+    @Column(length = 200)
     private String bank;
+    @Column(length = 200)
     private String bank_account_number;
 }

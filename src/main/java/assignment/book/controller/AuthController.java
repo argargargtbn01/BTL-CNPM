@@ -1,7 +1,7 @@
 package assignment.book.controller;
 
-import assignment.book.dto.request.UserRequestDto;
-import assignment.book.dto.response.UserResponseDto;
+import assignment.book.dto.request.ProfileRequestDto;
+import assignment.book.dto.response.ProfileResponseDto;
 import assignment.book.service.auth.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,14 +16,14 @@ public class AuthController {
     @Autowired
     private AuthService authService;
     @PostMapping(value = "/signup")
-    public ResponseEntity<?> signup(@ModelAttribute UserRequestDto userRequestDto){
+    public ResponseEntity<?> signup(@ModelAttribute ProfileRequestDto userRequestDto){
         authService.signup(userRequestDto);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestParam String username,@RequestParam String password){
-        Optional<UserResponseDto> userResponseDto = authService.login(username, password);
+        Optional<ProfileResponseDto> userResponseDto = authService.login(username, password);
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDto);
     }
 
